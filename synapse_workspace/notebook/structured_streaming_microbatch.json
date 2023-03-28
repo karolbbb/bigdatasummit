@@ -1,5 +1,5 @@
 {
-	"name": "structured_streaming_batch",
+	"name": "structured_streaming_microbatch",
 	"properties": {
 		"nbformat": 4,
 		"nbformat_minor": 2,
@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "d4bb0bc7-bc95-4a00-a615-3a9660037a2c"
+				"spark.autotune.trackingId": "98200d61-bee0-453f-9f04-0ede539ece17"
 			}
 		},
 		"metadata": {
