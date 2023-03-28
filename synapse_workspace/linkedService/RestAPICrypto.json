@@ -1,0 +1,18 @@
+{
+	"name": "RestAPICrypto",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"description": "https://api.coindesk.com/v1/bpi/currentprice.json",
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://api.coindesk.com/v1/bpi/currentprice.json",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

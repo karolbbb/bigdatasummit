@@ -1,0 +1,20 @@
+{
+	"name": "USA_OUT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azrawdatalaken6rjrc",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "datausa",
+				"fileSystem": "raw"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

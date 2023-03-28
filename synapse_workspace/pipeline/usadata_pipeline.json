@@ -1,0 +1,255 @@
+{
+	"name": "usadata_pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Source to Bronze",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "GET",
+						"paginationRules": {
+							"supportRFC5988": "true"
+						}
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "USA_DATA",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "USA_OUT",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy to silver",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Source to Bronze",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"wildcardFolderPath": "datausa",
+							"wildcardFileName": "*.json",
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "MergeFiles"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['data'][0]['ID Nation']"
+								},
+								"sink": {
+									"name": "ID Nation",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['data'][0]['Nation']"
+								},
+								"sink": {
+									"name": "Nation",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['data'][0]['ID Year']"
+								},
+								"sink": {
+									"name": "ID Year",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['data'][0]['Year']"
+								},
+								"sink": {
+									"name": "Year",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['data'][0]['Population']"
+								},
+								"sink": {
+									"name": "Population",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['data'][0]['Slug Nation']"
+								},
+								"sink": {
+									"name": "Slug Nation",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['source'][0]['measures'][0]"
+								},
+								"sink": {
+									"name": "measuers"
+								}
+							},
+							{
+								"source": {
+									"path": "$['source'][0]['annotations']['source_name']"
+								},
+								"sink": {
+									"name": "source_name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['source'][0]['annotations']['source_description']"
+								},
+								"sink": {
+									"name": "source_description",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['source'][0]['annotations']['dataset_name']"
+								},
+								"sink": {
+									"name": "dataset_name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['source'][0]['annotations']['dataset_link']"
+								},
+								"sink": {
+									"name": "dataset_link",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['source'][0]['annotations']['table_id']"
+								},
+								"sink": {
+									"name": "table_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['source'][0]['annotations']['topic']"
+								},
+								"sink": {
+									"name": "topic",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['source'][0]['annotations']['subtopic']"
+								},
+								"sink": {
+									"name": "subtopic",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['source'][0]['name']"
+								},
+								"sink": {
+									"name": "name",
+									"type": "String"
+								}
+							}
+						],
+						"collectionReference": "$['data']",
+						"mapComplexValuesToString": true
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "USA_OUT",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Silver",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-03-28T13:52:40Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 4",
+	"properties": {
+		"content": {
+			"query": "-- This is auto-generated code\nSELECT *\nFROM\n    OPENROWSET(\n        BULK 'https://azrawdatalaken6rjrc.dfs.core.windows.net/bronze/delta/stream_analytics_delta/',\n        FORMAT = 'DELTA'\n    ) AS [result]\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

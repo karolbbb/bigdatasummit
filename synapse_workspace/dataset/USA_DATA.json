@@ -1,0 +1,13 @@
+{
+	"name": "USA_DATA",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Rest_USA_Data",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

@@ -1,0 +1,21 @@
+{
+	"name": "Silver",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azcurateddatalaken6rjrc",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "USA_DATA",
+				"fileSystem": "silver"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}
