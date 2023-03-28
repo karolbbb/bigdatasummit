@@ -1,5 +1,5 @@
 {
-	"name": "usadata_pipeline",
+	"name": "classic_elt_pipeline",
 	"properties": {
 		"activities": [
 			{
