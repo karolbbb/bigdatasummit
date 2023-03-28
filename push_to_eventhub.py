@@ -2,8 +2,9 @@ import requests
 import json
 import time
 from azure.eventhub import EventHubProducerClient, EventData
+from config import connection_string_primary
 
-connection_string_primary = 'Endpoint=sb://azeventhubnsn6rjrc.servicebus.windows.net/;SharedAccessKeyName=event-hub-policy-kb;SharedAccessKey=VpejHpULoxv8N9nnrUpTaAIXEIaXnKNGI+AEhAv9wSQ=;EntityPath=azeventhubn6rjrc'
+# connection_string_primary = 'your_connection_string'
 
 def fetch_and_send_data():
     # Fetch data from CoinDesk API
