@@ -1,0 +1,381 @@
+[
+    {
+        "template": "OpenDatasets",
+        "artifacts" : {
+            "sqlScripts": [
+                {
+                    "name": "01 - Explore Open DataSet with SQL Serverless",
+                    "interface": "powershell",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/azure-synapse-analytics-end2end/main/Sample/OpenDatasets/SQLScripts/Serverless/01.AnalyzeOpenDatasetSQLServerless.sql",
+                    "workspaceFolderPath": "OpenDatasets/SQL Serverless",
+                    "tokens": [
+                        "##azsynapsewks##"
+                    ]
+                },
+                {
+                    "name": "02 - Query Parquet Files",
+                    "interface": "powershell",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/azure-synapse-analytics-end2end/main/Sample/OpenDatasets/SQLScripts/Serverless/02.QueryParquetFiles.sql",
+                    "workspaceFolderPath": "OpenDatasets/SQL Serverless",
+                    "tokens": []
+                },
+                {
+                    "name": "03 - Query CSV Files",
+                    "interface": "powershell",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/azure-synapse-analytics-end2end/main/Sample/OpenDatasets/SQLScripts/Serverless/03.QueryCSVFiles.sql",
+                    "workspaceFolderPath": "OpenDatasets/SQL Serverless",
+                    "tokens": []
+                },
+                {
+                    "name": "04 - Query JSON Files",
+                    "interface": "powershell",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/azure-synapse-analytics-end2end/main/Sample/OpenDatasets/SQLScripts/Serverless/04.QueryJSONFiles.sql",
+                    "workspaceFolderPath": "OpenDatasets/SQL Serverless",
+                    "tokens": []
+                },
+                {
+                    "name": "05 - Query Nested Types in JSON and Parquet Files",
+                    "interface": "powershell",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/azure-synapse-analytics-end2end/main/Sample/OpenDatasets/SQLScripts/Serverless/05.QueryNestedTypes.sql",
+                    "workspaceFolderPath": "OpenDatasets/SQL Serverless",
+                    "tokens": []
+                },
+                {
+                    "name": "06 - Use file metadata in queries",
+                    "interface": "powershell",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/azure-synapse-analytics-end2end/main/Sample/OpenDatasets/SQLScripts/Serverless/06.UseFileMetadata.sql",
+                    "workspaceFolderPath": "OpenDatasets/SQL Serverless",
+                    "tokens": []
+                },
+                {
+                    "name": "01 - Load the New York Taxicab dataset",
+                    "interface": "powershell",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/azure-synapse-analytics-end2end/main/Sample/OpenDatasets/SQLScripts/Dedicated/01.LoadNYCTaxiDataset.sql",
+                    "workspaceFolderPath": "OpenDatasets/Dedicated SQL",
+                    "tokens": []
+                },
+                {
+                    "name": "02 - Row-Level Security for dedicated SQL pools",
+                    "interface": "powershell",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/azure-synapse-analytics-end2end/main/Sample/OpenDatasets/SQLScripts/Dedicated/02.RowLevelSecurity.sql",
+                    "workspaceFolderPath": "OpenDatasets/Dedicated SQL",
+                    "tokens": []
+                },
+                {
+                    "name": "03 - Scoring machine learning models in dedicated SQL pool",
+                    "interface": "powershell",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/azure-synapse-analytics-end2end/main/Sample/OpenDatasets/SQLScripts/Dedicated/03.ScoreML.sql",
+                    "workspaceFolderPath": "OpenDatasets/Dedicated SQL",
+                    "tokens": []
+                }
+
+            ],
+            "pipelines": [],
+            "datasets":[],
+            "notebooks": [
+                {
+                    "name": "01 - Using Azure Open Datasets in Synapse",
+                    "interface": "powershell",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/azure-synapse-analytics-end2end/main/Sample/OpenDatasets/Notebooks/01-UsingOpenDatasetsSynapse.ipynb",
+                    "workspaceFolderPath": "OpenDatasets",
+                    "tokens": []
+                },
+                {
+                    "name": "02 - Getting Started with Delta Lake",
+                    "interface": "powershell",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/azure-synapse-analytics-end2end/main/Sample/OpenDatasets/Notebooks/02-GettingStartedDeltaLake.ipynb",
+                    "workspaceFolderPath": "OpenDatasets",
+                    "tokens": []
+                },
+                {
+                    "name": "03 - Data Exploration and ML Modeling using NYC Taxi dataset",
+                    "interface": "powershell",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/azure-synapse-analytics-end2end/main/Sample/OpenDatasets/Notebooks/03-DataExplorationMLModelingNYCTaxi.ipynb",
+                    "workspaceFolderPath": "OpenDatasets",
+                    "tokens": []
+                },
+                {
+                    "name": "04 - Getting Started with Hyperspace Indexing",
+                    "interface": "powershell",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/azure-synapse-analytics-end2end/main/Sample/OpenDatasets/Notebooks/04-GettingStartedHyperspaceIndexing.ipynb",
+                    "workspaceFolderPath": "OpenDatasets",
+                    "tokens": []
+                },
+                {
+                    "name": "05 - Read and write data from Azure Data Lake Storage Gen2",
+                    "interface": "powershell",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/azure-synapse-analytics-end2end/main/Sample/OpenDatasets/Notebooks/05-ReadWriteADLSGen2.ipynb",
+                    "workspaceFolderPath": "OpenDatasets",
+                    "tokens": []
+                },
+                {
+                    "name": "06 - Charting with Synapse Notebooks",
+                    "interface": "powershell",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/azure-synapse-analytics-end2end/main/Sample/OpenDatasets/Notebooks/06-ChartingSynapseNotebook.ipynb",
+                    "workspaceFolderPath": "OpenDatasets",
+                    "tokens": []
+                }
+            ],
+            "linkedServices":[
+                {
+                    "name": "nyc_tlc_yellow",
+                    "interface": "powershell",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/azure-synapse-analytics-end2end/main/Sample/OpenDatasets/LinkedServices/nyc_tlc_yellow.json",
+                    "tokens": []
+                }
+            ]
+        }
+    },
+    {
+        "template": "SynapseRetail",
+        "artifacts" : {
+            "sqlScripts": [
+                {
+                    "name": "adworks Row Counts",
+                    "interface": "rest",
+                    "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/sqlscript/adworks%20Row%20Counts.json"
+                }
+            ],
+            "pipelines": [],
+            "datasets":[],
+            "notebooks": [],
+            "linkedServices":[
+                {
+                    "name": "AzureBlobStorageSCD",
+                    "interface": "rest",
+                    "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/linkedService/AzureBlobStorageSCD.json"
+                }
+            ],
+            "dataflows":[
+                {
+                    "name": "DimChannel_DF",
+                    "interface": "rest",
+                    "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/dataflow/DimChannel_DF.json"
+                },
+                {
+                    "name": "DimCustomer_DF",
+                    "interface": "rest",
+                    "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/dataflow/DimCustomer_DF.json"
+                },
+                {
+                    "name": "DimDate_DF",
+                    "interface": "rest",
+                    "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/dataflow/DimDate_DF.json"
+                },
+                {
+                    "name": "DimGeography_DF",
+                    "interface": "rest",
+                    "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/dataflow/DimGeography_DF.json"
+                },
+                {
+                    "name": "DimProduct_DF",
+                    "interface": "rest",
+                    "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/dataflow/DimProduct_DF.json"
+                },
+                {
+                    "name": "FactSales_DF",
+                    "interface": "rest",
+                    "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/dataflow/FactSales_DF.json"
+                },
+                {
+                    "name": "adworks_DF",
+                    "interface": "rest",
+                    "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/dataflow/adworks_DF.json"
+                }
+            ],
+            "databases": [
+                {
+                    "name": "adworks",
+                    "interface": "rest",
+                    "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/database/adworks.json",
+                    "tables": [
+                        {
+                            "name": "Calendar",
+                            "interface": "rest",
+                            "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/database/adworks/table/Calendar.json"
+                        },
+                        {
+                            "name": "InternetCustomer",
+                            "interface": "rest",
+                            "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/database/adworks/table/InternetCustomer.json"
+                        },
+                        {
+                            "name": "Location",
+                            "interface": "rest",
+                            "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/database/adworks/table/Location.json"
+                        },
+                        {
+                            "name": "ProductData",
+                            "interface": "rest",
+                            "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/database/adworks/table/ProductData.json"
+                        },
+                        {
+                            "name": "Sales",
+                            "interface": "rest",
+                            "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/database/adworks/table/Sales.json"
+                        },
+                        {
+                            "name": "Reseller",
+                            "interface": "rest",
+                            "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/database/adworks/table/Reseller.json"
+                        },
+                        {
+                            "name": "SalesTerritory",
+                            "interface": "rest",
+                            "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/database/adworks/table/SalesTerritory.json"
+                        }
+                    ],
+                    "relationships":[
+                        {
+                            "name": "relationship-bvbxmtunqg",
+                            "interface": "rest",
+                            "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/database/adworks/relationship/relationship-bvbxmtunqg.json"
+                        },
+                        {
+                            "name": "relationship-dngliwnwob",
+                            "interface": "rest",
+                            "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/database/adworks/relationship/relationship-dngliwnwob.json"
+                        },
+                        {
+                            "name": "relationship-fybugkapdy",
+                            "interface": "rest",
+                            "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/database/adworks/relationship/relationship-fybugkapdy.json"
+                        },
+                        {
+                            "name": "relationship-icsxkfyxeh",
+                            "interface": "rest",
+                            "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/database/adworks/relationship/relationship-icsxkfyxeh.json"
+                        },
+                        {
+                            "name": "relationship-kdnwhffnmf",
+                            "interface": "rest",
+                            "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/database/adworks/relationship/relationship-kdnwhffnmf.json"
+                        },
+                        {
+                            "name": "relationship-somtklqqvv",
+                            "interface": "rest",
+                            "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/database/adworks/relationship/relationship-somtklqqvv.json"
+                        },
+                        {
+                            "name": "relationship-spacklmtsb",
+                            "interface": "rest",
+                            "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/database/adworks/relationship/relationship-spacklmtsb.json"
+                        },
+                        {
+                            "name": "relationship-uefhwxjtyv",
+                            "interface": "rest",
+                            "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/database/adworks/relationship/relationship-uefhwxjtyv.json"
+                        },
+                        {
+                            "name": "relationship-xggfxzuwec",
+                            "interface": "rest",
+                            "definitionFilePath": "https://raw.githubusercontent.com/jchinchillaMSFT/ww-csu-psk-synapse-retail/main/database/adworks/relationship/relationship-xggfxzuwec.json"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "template": "OneClickPoC",
+        "artifacts" : {
+            "sqlScripts": [],
+            "pipelines": [
+                {
+                    "name": "TripFaresDataPipeline",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/synapsepoc/pipeline/TripFaresDataPipeline.json",
+                    "tokens": []
+                }
+            ],
+            "datasets":[
+                {
+                    "name": "AzureSynapseAnalyticsFaresData",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/synapsepoc/dataset/AzureSynapseAnalyticsFaresData.json",
+                    "tokens": []
+                },
+                {
+                    "name": "AzureSynapseAnalyticsTable1",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/synapsepoc/dataset/AzureSynapseAnalyticsTable1.json",
+                    "tokens": []
+                },
+                {
+                    "name": "AzureSynapseAnalyticsTripsData",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/synapsepoc/dataset/AzureSynapseAnalyticsTripsData.json",
+                    "tokens": []
+                },
+                {
+                    "name": "azureSynapseAnalyticsSchema",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/synapsepoc/dataset/azureSynapseAnalyticsSchema.json",
+                    "tokens": []
+                },
+                {
+                    "name": "azureSynapseAnalyticsTable",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/synapsepoc/dataset/azureSynapseAnalyticsTable.json",
+                    "tokens": []
+                },
+                {
+                    "name": "faresDataSink",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/synapsepoc/dataset/faresDataSink.json",
+                    "tokens": []
+                },
+                {
+                    "name": "faresDataSource",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/synapsepoc/dataset/faresDataSource.json",
+                    "tokens": []
+                },
+                {
+                    "name": "tripDataSink",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/synapsepoc/dataset/tripDataSink.json",
+                    "tokens": []
+                },
+                {
+                    "name": "tripsDataSource",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/synapsepoc/dataset/tripsDataSource.json",
+                    "tokens": []
+                }
+            ],
+            "dataflows":[
+                {
+                    "name": "tripFaresDataTransformations",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/synapsepoc/dataflow/tripFaresDataTransformations.json",
+                    "tokens": []
+                }
+            ],
+            "notebooks": [
+                {
+                    "name": "Data Exploration and ML Modeling - NYC taxi predict using Spark MLlib",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/synapsepoc/notebook/Data%20Exploration%20and%20ML%20Modeling%20-%20NYC%20taxi%20predict%20using%20Spark%20MLlib.json",
+                    "workspaceFolderPath": "OpenDatasets",
+                    "tokens": []
+                }
+            ],
+            "linkedServices":[
+                {
+                    "name": "HttpServerTripDataLinkedService",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/synapsepoc/linkedService/HttpServerTripDataLinkedService.json",
+                    "tokens": []
+                },
+                {
+                    "name": "HttpServerTripFareDataLinkedService",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/synapsepoc/linkedService/HttpServerTripFareDataLinkedService.json",
+                    "tokens": []
+                },
+                {
+                    "name": "TripFaresDataLakeStorageLinkedService",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/synapsepoc/linkedService/TripFaresDataLakeStorageLinkedService.json",
+                    "tokens": []
+                },
+                {
+                    "name": "TripFaresSynapseAnalyticsLinkedService",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/synapsepoc/linkedService/TripFaresSynapseAnalyticsLinkedService.json",
+                    "tokens": []
+                },
+                {
+                    "name": "keyVaultLinkedservice",
+                    "definitionFilePath": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/synapsepoc/linkedService/keyVaultLinkedservice.json",
+                    "tokens": []
+                }
+            ]
+        }
+    }
+]

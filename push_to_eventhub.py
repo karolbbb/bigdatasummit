@@ -8,7 +8,7 @@ from config import connection_string_primary
 
 def fetch_and_send_data():
     # Fetch data from CoinDesk API
-    url = 'https://api.coindesk.com/v1/bpi/currentprice.json'
+    url = 'https://datausa.io/api/data?drilldowns=Nation&measures=Population'
     response = requests.get(url)
     data = response.json()
 
