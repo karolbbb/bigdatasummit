@@ -19,14 +19,14 @@ az provider register --namespace 'Microsoft.DocumentDB' --consent-to-permissions
 
 
 # Create resource group
-az group create -l westeurope -n rg-kboks-bigdatasummit
+az group create -l westeurope -n <resource_group_name>
 
 # Deploy
 # Go to "Deploy" directory:
 # Add ctrlDeploySampleArtifacts=true to populate sample data and notebooks, like this:
 
 cd Deploy
-az deployment group create --resource-group rg-kboks-bigdatasummit --template-file ./AzureAnalyticsE2E.bicep --parameters uniqueSuffix=bg1s synapseSqlAdminPassword=PasswordFor1stLogin! ctrlDeploySampleArtifacts=true
+az deployment group create --resource-group <resource_group_name> --template-file ./AzureAnalyticsE2E.bicep --parameters uniqueSuffix=<unique_suffix> synapseSqlAdminPassword=PasswordFor1stLogin! ctrlDeploySampleArtifacts=true
 
 # Please, make sure you provide a uniqueSuffix parameter in case you are recreating infrastructure, so you would not have conflicts with deleted resources.
 
@@ -39,4 +39,4 @@ az ad signed-in-user show --query id -o tsv
 
 # And to assign an admin permission:
 
-az synapse sql ad-admin create --workspace-name azsynapsewksn6rjrc --resource-group rg-kboks-bigdatasummit --display-name kboks@softserveinc.com --object-id c5bc06d1-e72f-41ee-9b5c-ff1152c6c150
+az synapse sql ad-admin create --workspace-name <synapse_workspace_name> --resource-group <resource_group_name> --display-name <email> --object-id 00000000-0000-0000-0000-000000000000
