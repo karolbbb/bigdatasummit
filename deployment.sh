@@ -1,35 +1,32 @@
 # Deployment
 # Register resource providers
-az provider register --namespace 'Microsoft.Synapse' --accept-terms --consent-to-permissions --wait
-az provider register --namespace 'Microsoft.Purview' --accept-terms --consent-to-permissions --wait
-az provider register --namespace 'Microsoft. --accept-terms --consent-to-permissions --waitMachineLearningServices'
-az provider register --namespace 'Microsoft.ContainerRegistry' --accept-terms --consent-to-permissions --wait
-az provider register --namespace 'Microsoft.Network' --accept-terms --consent-to-permissions --wait
-az provider register --namespace 'Microsoft.DataShare' --accept-terms --consent-to-permissions --wait
-az provider register --namespace 'Microsoft.Authorization' --accept-terms --consent-to-permissions --wait
-az provider register --namespace 'Microsoft.CognitiveServices' --accept-terms --consent-to-permissions --wait
-az provider register --namespace 'Microsoft.ManagedIdentity' --accept-terms --consent-to-permissions --wait
-az provider register --namespace 'Microsoft.KeyVault' --accept-terms --consent-to-permissions --wait
-az provider register --namespace 'Microsoft.Storage' --accept-terms --consent-to-permissions --wait
-az provider register --namespace 'Microsoft.StreamAnalytics' --accept-terms --consent-to-permissions --wait
-az provider register --namespace 'Microsoft.Devices' --accept-terms --consent-to-permissions --wait
-az provider register --namespace 'Microsoft.Insights' --accept-terms --consent-to-permissions --wait
-az provider register --namespace 'Microsoft.EventHub' --accept-terms --consent-to-permissions --wait
-az provider register --namespace 'Microsoft.DocumentDB' --accept-terms --consent-to-permissions --wait
+az provider register --namespace 'Microsoft.Synapse' --consent-to-permissions --wait
+az provider register --namespace 'Microsoft.Purview' --consent-to-permissions --wait
+az provider register --namespace 'Microsoft.MachineLearningServices' --consent-to-permissions --wait
+az provider register --namespace 'Microsoft.ContainerRegistry' --consent-to-permissions --wait
+az provider register --namespace 'Microsoft.Network' --consent-to-permissions --wait
+az provider register --namespace 'Microsoft.DataShare' --consent-to-permissions --wait
+az provider register --namespace 'Microsoft.Authorization' --consent-to-permissions --wait
+az provider register --namespace 'Microsoft.CognitiveServices' --consent-to-permissions --wait
+az provider register --namespace 'Microsoft.ManagedIdentity' --consent-to-permissions --wait
+az provider register --namespace 'Microsoft.KeyVault' --consent-to-permissions --wait
+az provider register --namespace 'Microsoft.Storage' --consent-to-permissions --wait
+az provider register --namespace 'Microsoft.StreamAnalytics' --consent-to-permissions --wait
+az provider register --namespace 'Microsoft.Devices' --consent-to-permissions --wait
+az provider register --namespace 'Microsoft.Insights' --consent-to-permissions --wait
+az provider register --namespace 'Microsoft.EventHub' --consent-to-permissions --wait
+az provider register --namespace 'Microsoft.DocumentDB' --consent-to-permissions --wait
 
 
 # Create resource group
-az group create -l eastus -n e2e-synapse-deployment
+az group create -l westeurope -n rg-kboks-bigdatasummit
 
 # Deploy
 # Go to "Deploy" directory:
-
-cd Deploy
-az deployment group create --resource-group e2e-synapse-deployment --template-file ./AzureAnalyticsE2E.bicep --parameters synapseSqlAdminPassword=PasswordFor1stLogin!
-
 # Add ctrlDeploySampleArtifacts=true to populate sample data and notebooks, like this:
 
-az deployment group create --resource-group e2e-synapse-deployment --template-file ./AzureAnalyticsE2E.bicep --parameters synapseSqlAdminPassword=PasswordFor1stLogin! ctrlDeploySampleArtifacts=true
+cd Deploy
+az deployment group create --resource-group rg-kboks-bigdatasummit --template-file ./AzureAnalyticsE2E.bicep --parameters uniqueSuffix=bg1s synapseSqlAdminPassword=PasswordFor1stLogin! ctrlDeploySampleArtifacts=true
 
 # Please, make sure you provide a uniqueSuffix parameter in case you are recreating infrastructure, so you would not have conflicts with deleted resources.
 
@@ -42,4 +39,4 @@ az ad signed-in-user show --query id -o tsv
 
 # And to assign an admin permission:
 
-az synapse sql ad-admin create --workspace-name SYNAPSE_WORKSPACE_NAME --resource-group e2e-synapse-deployment --display-name YOURACCOUNT@YOURDOMAIN --object-id 00000000-0000-0000-0000-000000000000
+az synapse sql ad-admin create --workspace-name azsynapsewksn6rjrc --resource-group rg-kboks-bigdatasummit --display-name kboks@softserveinc.com --object-id c5bc06d1-e72f-41ee-9b5c-ff1152c6c150
